@@ -57,11 +57,24 @@ public class TestCompute {
     when(mq.getAt(1)).thenReturn("included");
     c = new Compute(mq);
 
-    assertEquals(2, c.countNumberOfOccurrences("included"));
+    assertEquals(1, c.countNumberOfOccurrences("included"));
 
 
   }
+  @Test
+  public void messageQueueDoesContainMultpile(){
+    MessageQueue mq = mock(MessageQueue.class);
+    String s = "included";
+    mq.contains(s);
+    when(mq.size()).thenReturn(2);
+    when(mq.contains("included")).thenReturn(true);
+    when(mq.getAt(0)).thenReturn("included");
+    when(mq.getAt(1)).thenReturn("included");
+    c = new Compute(mq);
 
+    assertEquals(2, c.countNumberOfOccurrences("included"));
+
+  }
 
 
 }
