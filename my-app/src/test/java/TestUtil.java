@@ -13,4 +13,29 @@ public class TestUtil {
 
   @Test
   public void example() { assertTrue(true); }
+
+  @Test
+  public void singleArgTest(){
+    boolean i = c.compute(1);
+    assertTrue(i==false);
+  }
+  @Test
+  public void evenLengthArgTest(){
+    boolean i = c.compute(1,2);
+    assertTrue(i==false);
+  }
+  @Test
+  public void oddLengthArgTest(){
+    boolean i = c.compute(1,2);
+    assertTrue(i==false);
+  }
+  @Test
+  public void oddLengthArgTest(){
+    boolean i = c.compute(1,2);
+    assertTrue(i==false);
+  }
+
+
+
+
 }
